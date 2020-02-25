@@ -36,16 +36,29 @@
         <div class="otsikko">
             <h2>Most popular: </h2>
         </div>
-        <div class="slider">
-            <img id="flag1" alt="image-1">
-            <img id="flag2" alt="image-2">
-            <img id="flag3" alt="image-3">
-            <p id="countryName1"></p>
-            <p id="countryName2"></p>
-            <p id="countryName3"></p>
-        </div>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <img id="flag1" style="width:100%">
+              <div class="text" id="name1"></div>
+            </div>
+            
+            <div class="mySlides fade">
+              <img id="flag2"style="width:100%">
+              <div class="text" id="name2"></div>
+            </div>
+            
+            <div class="mySlides fade">
+              <img id="flag3" style="width:100%">
+              <div class="text" id="name3"></div>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            </div> 
     </section>
-    
+
     <aside class="recents">
         <p class="Test">Country, City</p>
     </aside>
