@@ -1,6 +1,8 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -9,14 +11,81 @@ header {
     grid-template-rows: auto;
 }
 
+.logo {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2.5vh;
+    margin: 1vh;
+}
+
+nav{
+    justify-self: end;
+    align-self: center;
+}
+
 nav ul li{
+    margin: 2vh;
     list-style: none;
     text-align: center;
     text-decoration: none;
+    font-size: 2.1vh;
     display: inline-block;
 }
 
 nav a {
     color: black;
     text-decoration: none;
+}
+
+.hero {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 7vh 1fr 7vh;
+    grid-template-rows: 2fr 1fr 1fr 2fr;
+    background-image: url(https://picsum.photos/1920/1080);
+    height: 50vh;
+}
+
+.text {
+    grid-column: 2/3;
+    grid-row: 2/4;
+}
+
+.text h2 {
+    text-transform: uppercase;
+    text-align: center;
+    color: snow;
+}
+
+.text p{
+    text-transform: uppercase;
+    text-align: center;
+    color: snow;
+}
+.button {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    text-align: center;
+}
+
+.button button {
+    /*modify the button*/
+}
+
+.populars {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 20vh;
+}
+
+.otsikko {
+    grid-row: 1/1;
+    grid-column: 1/3;
+}
+
+.slider {
+    grid-row: 1/1;
+    grid-column-start: 2/3;
+    grid-column-end: 3/3;
 }
