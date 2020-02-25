@@ -80,7 +80,7 @@ nav a {
 .populars {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr;
     height: 20vh;
 }
 
@@ -90,11 +90,30 @@ nav a {
 }
 
 .slider {
-    grid-row: 1/1;
+    grid-row: 1/2;
     grid-column-start: 2/3;
     grid-column-end: 3/3;
+}
+.flags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.countrynames {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 }
 
 #flag1, #flag2, #flag3 {
     height: 12vh;
+    max-width: 18vh;
+}
+
+.recents {
+    grid-area: recents;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
 }
