@@ -7,8 +7,7 @@ font-family: 'Vollkorn', ;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif,;
-    
+    font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -190,8 +189,6 @@ footer{
     grid-template-rows: auto; 
     background-color: #1c1e21;
     color:white;
-    padding-top: 70px;
-    margin-top: 20px;
 }
 .container{
     grid-column: 2/3;
@@ -201,40 +198,18 @@ footer{
     grid-template-areas: 
     ". top ."
     "bot . .";
-    width: 100%;
-    padding-bottom: 55px;
-    border-bottom: 1px solid #555;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .top{
-    align-self: space-evenly;
-    justify-self: space-evenly;
-      grid-area: top;
-      text-align: center;
+}
 
-  }
-  .bot{
-    align-self: space-evenly;
-    justify-self: space-evenly;
-      grid-area: bot;
-      text-align: center;
-  }
-  ul {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.top{
+    grid-area: top;
+    text-align: center;
+}
+.bot{
+    grid-area: bot;
+    text-align: center;
 }
 
 ul li {
-    float: left;
-    width: 30%
-    margin-right: 5%;
-}
-
-ul li.right {
-    margin-right: 0;
-    grid-template-columns: 40vh;
-    grid-template-rows: repeat(6, auto);
+    display: inline-block;
     margin: 1vh;
 }
