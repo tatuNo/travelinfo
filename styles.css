@@ -66,19 +66,19 @@ nav a {
     height: 50vh;
 }
 
-.text {
+.herotext {
     grid-column: 2/3;
     grid-row: 2/4;
 }
 
-.text h2 {
+.herotext h2 {
     font-size: 10vh;
     text-transform: uppercase;
     text-align: center;
     color: snow;
 }
 
-.text p{
+.herotext p{
     text-transform: uppercase;
     text-align: center;
     color: snow;
@@ -123,8 +123,8 @@ nav a {
 }
 
 #flag1, #flag2, #flag3 {
-<<<<<<< HEAD
-    height: 12vh;
+    max-height: 14vh;
+    max-width: 14vh;
 }
 .mySlides {
     display: none;
@@ -199,7 +199,6 @@ nav a {
   @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
   }
-=======
     max-height: 12vh;
     max-width: 18vh;
 }
@@ -290,4 +289,3 @@ ul li {
     display: inline-block;
     margin: 1vh;
 }
->>>>>>> 0390511dd82385981eb8336e4ec5d858a26a87b7
