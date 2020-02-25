@@ -95,6 +95,13 @@ nav a {
     grid-column-end: 3/3;
 }
 
-#flag1 {
+#flag1, #flag2, #flag3{
     height: 12vh;
+}
+
+.recents {
+    grid-area: recents;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
 }
