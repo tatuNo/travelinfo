@@ -8,9 +8,23 @@ font-family: 'Vollkorn', ;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif,;
+    
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header header"
+    "hero hero hero"
+    "populars populars populars"
+    "recents tba tba"
+    "footer footer footer";
 }
 
 header {
+    grid-area: header;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -57,6 +71,7 @@ nav a {
 }
 
 .text h2 {
+    font-size: 10vh;
     text-transform: uppercase;
     text-align: center;
     color: snow;
@@ -69,7 +84,7 @@ nav a {
 }
 .button {
     grid-column: 2/3;
-    grid-row: 3/4;
+    grid-row: 4/4;
     text-align: center;
 }
 
@@ -78,10 +93,10 @@ nav a {
 }
 
 .populars {
+    grid-area: populars;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 20vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
 }
 
 .otsikko {
@@ -97,17 +112,17 @@ nav a {
 .flags {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    margin: 2vh;
 }
 
 .countrynames {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    margin: 0 2vh 0 2vh;
 }
 
 #flag1, #flag2, #flag3 {
-    height: 12vh;
+    max-height: 12vh;
     max-width: 18vh;
 }
 
@@ -117,19 +132,88 @@ nav a {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
 }
-/*display position float*/
+
+
+.user-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4vh 4vh;
+}
+
+.user-info img {
+    grid-column: 1/2;
+}
+
+.name {
+    grid-column: 2/2;
+    grid-row: 1/2;
+}
+
+.date {
+    grid-column: 2/2;
+    grid-row: 2/2;
+}
+
+.user-info > p {
+    grid-column: 2/2;
+}
+
+.country {
+    margin-top: 0.5vh;
+}
+
+.comment {
+    margin: 1vh 0 1vh 0;
+}
+
+.more {
+    text-align: center;
+}
+
+.votes button{
+    margin-right: 2vh;
+    padding: 0.3vh;
+}
+
+.TBA {
+    grid-area: TBA;
+}
+
 footer{
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 7vh 1fr 7vh;
+    grid-template-rows: auto; 
     background-color: #1c1e21;
     color:white;
     padding-top: 70px;
     margin-top: 20px;
-    position: relative;
 }
 .container{
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    ". top ."
+    "bot . .";
     width: 100%;
     padding-bottom: 55px;
     border-bottom: 1px solid #555;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .top{
+    align-self: space-evenly;
+    justify-self: space-evenly;
+      grid-area: top;
+      text-align: center;
+
+  }
+  .bot{
+    align-self: space-evenly;
+    justify-self: space-evenly;
+      grid-area: bot;
+      text-align: center;
   }
   ul {
     width: 100%;
@@ -146,4 +230,7 @@ ul li {
 
 ul li.right {
     margin-right: 0;
+    grid-template-columns: 40vh;
+    grid-template-rows: repeat(6, auto);
+    margin: 1vh;
 }
