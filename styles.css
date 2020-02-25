@@ -28,6 +28,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+    border-bottom: 1.5px solid black;
 }
 
 .logo {
@@ -59,6 +60,7 @@ nav a {
 .hero {
     grid-area: hero;
     display: grid;
+    background-repeat: no-repeat;
     grid-template-columns: 7vh 1fr 7vh;
     grid-template-rows: 2fr 1fr 1fr 2fr;
     background-image: url(https://picsum.photos/1920/1080);
@@ -125,7 +127,9 @@ nav a {
     max-height: 12vh;
     max-width: 18vh;
 }
-
+#countryName1, #countryName2, #countryName3 {
+    margin-left: 1.4vh;
+} 
 .recents {
     grid-area: recents;
     display: grid;
