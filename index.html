@@ -8,7 +8,6 @@
     
 </head>
 <body>
-    <script src="javascript.js"></script>
     <header>
         <div class="logo">
             <IMG SRC="img/logoweb.png" ALT="some text" WIDTH=125>
@@ -35,6 +34,8 @@
         </div>
     </div>
     <section class="hero">
+    
+    <main class="hero">
         <div class="herotext">
             <h2>Otsikko</h2>
             <p>Lorem, ipsum dolor.</p>
@@ -42,40 +43,30 @@
         <div class="button">
             <button>Here</button>
         </div>
-    </section>
-
+    </main>
     <section class="populars"> 
         <div class="otsikko">
             <h2>Most popular: </h2>
         </div>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-              <img id="flag1" >
-              <div class="text" id="name1"></div>
+        <div class="slider">
+            <div class="flags">
+                <img id="flag1">
+                <img id="flag2">
+                <img id="flag3">
             </div>
-            
-            <div class="mySlides fade">
-              <img id="flag2">
-              <div class="text" id="name2"></div>
+            <div class="countryNames">
+                <p id="name1"></p>
+                <p id="name2"></p>
+                <p id="name3"></p>
             </div>
-            
-            <div class="mySlides fade">
-              <img id="flag3">
-              <div class="text" id="name3"></div>
-            </div>
-            
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            
-            </div> 
+        </div>
     </section>
-
     <aside class="recents">
         <div class="heading">
             <h2>Recent reviews: </h2>
         </div>
         <div class="user-info">
-            <img src="https://picsum.photos/50" alt="">
+            <img src="https://picsum.photos/100" alt="">
             <p class="name">Lorem Ipsum</p>
             <p class="date">March 1st, 2020</p>
         </div>
@@ -95,7 +86,9 @@
     </aside>
     
     <section class="TBA">
-        <div class="TBA"></div>
+        <div class="tba">
+            <p>tba</p>
+        </div>
     </section>
     <footer class="footer">
         <div class="container">
@@ -117,5 +110,6 @@
             </div>
             <div class="footer-logo"><IMG SRC="img/logowebvalkonen.png" ALT="some text" WIDTH=75></div>
         </div>
+        <script src="javascript.js"></script>
 </body>
 </html>
