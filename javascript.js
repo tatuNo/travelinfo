@@ -61,4 +61,15 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-}               
+}
+
+function loginpop () {
+document.querySelector('.bg-modal').style.display = 'flex';
+}
+function closelogin () { 
+document.querySelector('.bg-modal').style.display = 'none';
+}
+/** haluaisin tehdä tämän näin mutta olen kyvytön
+document.getElementById('login').addEventListener('click', loginpop);
+document.querySelector('.close').addEventListener('click', closelogin);
+ */

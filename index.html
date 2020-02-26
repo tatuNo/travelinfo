@@ -18,11 +18,22 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Search</a></li>
-                <li><a href="#">Login</a></li>
+                <li onclick="loginpop()" id="login">Login</li>
             </ul>
         </nav>
     </header>
-    
+    <!--Modal section-->
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div onclick="closelogin()" class="close">+</div>
+            <img src="img/logoweb.png" class="inputlog" alt="">
+        <form action="">
+        <input class="inputlog" type="text" placeholder="Username">
+        <input class="inputlog" type="text" placeholder="Password">
+        <button>Login</button>
+    </form>
+        </div>
+    </div>
     <section class="hero">
         <div class="herotext">
             <h2>Otsikko</h2>
