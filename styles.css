@@ -268,20 +268,35 @@ footer{
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto;
     grid-template-areas: 
-    ". top ."
-    "bot . .";
+    "top top top"
+    "bot bot footer-logo";
 }
 
 .top{
     grid-area: top;
     text-align: center;
 }
+.top li{
+    display: inline-block;
+    font-size: 4vh;
+    margin: 2vh 15vh 4vh 15vh;
+}
 .bot{
     grid-area: bot;
     text-align: center;
+    
+}
+.copyright{
+    float: left;
+}
+.footer-logo{
+    grid-area: footer-logo;
+    text-align: right;
 }
 
-ul li {
+.bot ul li {
     display: inline-block;
-    margin: 1vh;
+    margin: 2vh 4vh 0vh 1vh;
+    font-size: 2vh;
 }
+
