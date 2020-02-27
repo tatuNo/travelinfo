@@ -35,7 +35,7 @@ body {
 
 .modal-content {
     width: 500px;
-    height: 300px;
+    height: 330px;
     background-color:white;
     border-radius: 4px;
     text-align: center;
@@ -46,7 +46,7 @@ body {
 .inputlog {
     width: 50%;
     display: block;
-    margin: 15px auto;
+    margin: 10px auto;
 }
 .close {
     position: absolute;
@@ -182,80 +182,7 @@ nav a {
     max-width: 80%;
     height: auto;
 }
-.mySlides {
-    display: none;
- }
- /* show first slide by default */
- .mySlides:first-child {
-    display: block;
- }
-/* Slideshow container */
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-  }
-  
-  /* Next & previous buttons */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
-  
-  /* Caption text */
-  .text {
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-  }
-  
-  /* Fading animation */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  
-  /* On smaller screens, decrease text size */
-  @media only screen and (max-width: 300px) {
-    .prev, .next,.text {font-size: 11px}
-  }
- 
+
 #countryName1, #countryName2, #countryName3 {
     margin-left: 1.4vh;
 } 
@@ -272,6 +199,13 @@ nav a {
     grid-row: 1/2;
     max-width: 85%;
     height: auto;
+}
+#flag4 {
+
+    grid-column: 4/5;
+    grid-row: 1/2;
+        max-width: 85%;
+        height: auto; 
 }
 
 #name1 {

@@ -17,12 +17,12 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Search</a></li>
-                <li onclick="loginpop()" id="login">Login</li>
+                <li onclick="loginpop()">Login</li>
             </ul>
         </nav>
     </header>
     <!--Modal section-->
-    <div class="bg-modal">
+    <div class="bg-modal"id="loginpage">
         <div class="modal-content">
             <div onclick="closelogin()" class="close">+</div>
             <img src="img/logoweb.png" class="inputlog" alt="">
@@ -30,11 +30,26 @@
         <input class="inputlog" type="text" placeholder="Username">
         <input class="inputlog" type="text" placeholder="Password">
         <button>Login</button>
+        <span></span>
+        <p>Not registered yet?</p>
+        <p><a onclick="signuppop()" href="#">Sign up</a></p>
     </form>
         </div>
     </div>
-    <section class="hero">
-    
+    <div class="bg-modal" id="signuppage">
+        <div class="modal-content">
+            <div onclick="closelogin()" class="close">+</div>
+            <img src="img/logoweb.png" class="inputlog" alt="">
+            <form action="">
+                <input class="inputlog" type="text" placeholder="Name">
+                <input class="inputlog" type="text" placeholder="Email">
+                 <input class="inputlog" type="text" placeholder="Password">
+                 <input class="inputlog" type="text" placeholder="Password again">
+                 <button>Sign up</button>  
+            </form>
+        </div>
+    </div>
+
     <main class="hero">
         <div class="herotext">
             <h2>Otsikko</h2>
@@ -53,6 +68,7 @@
                 <img id="flag1">
                 <img id="flag2">
                 <img id="flag3">
+                <!--<img id="flag4"> -->
             </div>
             <div class="countryNames">
                 <p id="name1"></p>
