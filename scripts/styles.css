@@ -161,11 +161,11 @@ nav a {
 }
 
 .flags {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    /**grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-column: 1/4;
-    grid-row: 2/3;
+    grid-row: 2/3;**/
 }
 
 .countryNames {

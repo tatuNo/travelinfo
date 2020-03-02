@@ -94,3 +94,4 @@ document.querySelector('.close').addEventListener('click', closelogin);
       var slider = document.getElementById('slider-image').innerHTML = "<img src=" + image[i-1] + ">";
 
     }
+
