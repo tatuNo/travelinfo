@@ -10,7 +10,9 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
+const mongo = require('mongodb');
 
+const url = 'mongodb://localhost:3000/'
 
 const initializePassport = require('./passport-config');
 initializePassport(
@@ -22,8 +24,8 @@ initializePassport(
 const users = [];
 
 //tell express to find all render files in views and scripts like js and css in scripts folder.
-app.use(express.static(__dirname+ '/views'));
-app.use(express.static(__dirname + '/scripts'));
+app.use(express.static(path.join(__dirname, '/views')));
+app.use(express.static(path.join(__dirname, '/scripts')));
 
 app.use(express.urlencoded({ extended: false}));
 
@@ -86,4 +88,4 @@ function checkNotAuthenticated(req, res, next) {
     next();
 }
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
