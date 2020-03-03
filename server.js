@@ -10,9 +10,6 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
-const mongo = require('mongodb');
-
-const url = 'mongodb://localhost:3000/'
 
 const initializePassport = require('./passport-config');
 initializePassport(
@@ -88,4 +85,4 @@ function checkNotAuthenticated(req, res, next) {
     next();
 }
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT);
