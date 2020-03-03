@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 var PORT = process.env.PORT || 3000;
 
 const mongoURI = 'mongodb+srv://***REMOVED***:***REMOVED***@webtekniikka-projekti-raull.mongodb.net/test?retryWrites=true&w=majority';
+mongoose.connect(process.env.mongoURI);
 
 app.use(bodyParser.json());
 app.use(cors());
