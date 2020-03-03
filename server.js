@@ -40,9 +40,9 @@ router.get('/get-data', function(req, res, next){
   
   router.post('/insert', function(req, res, next) {
     var item = {
-      title: req.body.title,
-      content: req.body.content,
-      author: req.body.author
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
     }
     MongoClient.connect(url, function(err, client){
       assert.equal(null, err);
