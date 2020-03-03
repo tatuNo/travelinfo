@@ -448,7 +448,7 @@ footer{
     
 }
 .creators{
-    grid-area:creators;
+    grid-area: creators;
     display: grid;
     margin: 0;
     display: flex;
@@ -467,8 +467,8 @@ footer{
   }
   .card{
     position: relative;
-    width: 900px;
-    height: 1050px;
+    width: 300px;
+    height: 350px;
     background: #fff;
     margin: 0 auto;
     border-radius: 4px;
@@ -520,6 +520,7 @@ footer{
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: 20% 80%;
   }
 
   .card .details{
@@ -546,5 +547,5 @@ footer{
   color: #f38695;
   display: block;
   margin-top: 5px;
-}
+   } 
 
