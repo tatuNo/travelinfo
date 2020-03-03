@@ -30,6 +30,9 @@ var Users = require('./routes/Users');
 
 app.use('/users', Users);
 
+app.use(express.static(path.join(__dirname, '/views')));
+app.use(express.static(path.join(__dirname, '/scripts')));
+
 app.get('/', (req, res) => {
     resp.sendFile('register.html', { root: path.join(__dirname, './views')});
 })
