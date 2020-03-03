@@ -11,7 +11,7 @@ const client = new MongoClient(url);
 const dbName = 'test';
 const assert = require('assert');
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
 //const url = 'mongodb+srv://***REMOVED***:***REMOVED***@webtekniikka-projekti-raull.mongodb.net/test?retryWrites=true&w=majority';
 
