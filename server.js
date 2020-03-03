@@ -1,73 +1,40 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const router = express.Router();
-const bcrypt = require('bcrypt'); 
-const passport = require('passport');
-const flash = require('express-flash');
-const session = require('express-session');
-const MongoClient = require('mongodb').MongoClient;
-const client = new MongoClient(url);
-const dbName = 'test';
-const assert = require('assert');
+var express = require('express');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+var app = express();
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI);
-
-//const url = 'mongodb+srv://***REMOVED***:***REMOVED***@webtekniikka-projekti-raull.mongodb.net/test?retryWrites=true&w=majority';
 
 var PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, '/views')));
-app.use(express.static(path.join(__dirname, '/scripts')));
+const mongoURI = 'mongodb+srv://***REMOVED***:***REMOVED***@webtekniikka-projekti-raull.mongodb.net/test?retryWrites=true&w=majority';
 
-router.get('/', function(req, res, next) {
-    res.render('views/index.html');
+app.use(bodyParser.json());
+app.use(cors());
+app.use(
+    bodyParser.urlencoded({
+        extended: false
+    })
+);
+
+mongoose
+    .connect(
+        mongoURI,
+        { useNewUrlParser: true }
+    )
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.log(err));
+
+var Users = require('./routes/Users');
+
+app.use('/users', Users);
+
+app.get('/', (req, res) => {
+    resp.sendFile('register.html', { root: path.join(__dirname, './views')});
+})
+
+
+
+
+app.listen(PORT, function() {
+    console.log('Server is running on port: ' + PORT)
 });
-
-router.get('/get-data', function(req, res, next){
-    var resultArray = [];
-    MongoClient.connect(url, function(err, client){
-      assert.equal(null, err);
-      const db = client.db(dbName);
-      var cursor = db.collection('user-data').find();
-      cursor.forEach(function(doc, err) {
-          assert.equal(null, err);
-          resultArray.push(doc);
-      }, function(){
-        client.close();
-        res.render('index', {items: resultArray});
-      });
-    });
-  });
-  
-  router.post('/insert', function(req, res, next) {
-    var item = {
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password
-    }
-    MongoClient.connect(url, function(err, client){
-      assert.equal(null, err);
-      const db = client.db(dbName);
-      db.collection('user-data').insertOne(item, function(err, result){
-        assert.equal(null, err);
-        console.log('Item inserted');
-        client.close();
-      });
-    });
-    res.redirect('/');
-  });
-  
- 
-
-router.post('/update', function(req, res, next){
-
-});
-
-router.post('/delete', function(req, res, next) {
-
-});
-
-app.listen(PORT);
-
-module.exports = router;
