@@ -1,91 +1,94 @@
 const express = require('express');
-const users = express.Router();
-const cors = require('cors');
-const jwt = require('jsonwebtoken');
-const bcrypr = require('bcrypt');
+const router = express.Router();
+const bcrypt = require('bcrypt');
+const passport = require('passport');
 
+// User model
 const User = require('../models/User');
-users.use(cors());
 
-process.env.SECRET_KEY = 'secret';
-
-users.post('/register', (req, res) => {
-    const today = new Date();
-    const userData = {
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        created: today
-    };
+// Login route
+router.get('/login', (req, res) => {
+    res.render('login')
 });
 
-User.findOne({
-    email:req.body.email
-})
-   .then(user => {
-      if (!user) {
-        bcrypt.hash(req.body.password, 10, (err, hash) => {
-            userData.password = hash;
-            User.create(userData)
-              .then(user => {
-                res.json({ status: user.email + 'Registered!' });
-              })
-              .catch(err => {
-                res.send('error: ' + err);
-              })
-        })
-      } else {
-        res.json({ error: 'User already exists' })
-      }
-   })
-   .catch(err => {
-       res.send('error: ' + err);
-   })
+// Register route
+router.get('/register', (req, res) => {
+  res.render('register')
+});
 
-users.post('/login', (res, req) => {
-    User.findOne({
-        email: req.body.email
-    })
-    .then(user => {
+// Register Handle
+router.post('/register', (req, res) => {
+  const { name, email, password } = req.body;
+  let errors = [];
+
+  //Check required fields
+  if (!name || !email || !password) {
+    errors.push({ msg: 'Please fill in all fields.' });
+  }
+
+  //Check password length
+  if(password.length < 6) {
+    errors.push({ msg: 'Password too short' });
+  }
+
+  if(errors.length > 0) {
+    res.render('register', {
+      errors,
+      name,
+      email,
+      password
+    });
+  } else {
+    User.findOne({ email: email })
+      .then(user => {
         if(user) {
-            if(bcrypt.compareSync(req.body.password, user.password)) {
-                const payload = {
-                    _id: user._id,
-                    name: user.name,
-                    email: user.email
-                }
-                let token = jwt.sign(payload, process.env.SECRET_KEY, {
-                    expiresIn: 1440
+          res.render('register', {
+            errors,
+            name,
+            email,
+            password
+          });
+        } else {
+          const newUser = new User({
+            name,
+            email,
+            password
+          });
+
+          // Password Hashing
+          bcrypt.genSalt(10, (err, salt) => {
+            bcrypt.hash(newUser.password, salt, (err, hash) => {
+              if(err) throw err;
+              //Hashes password
+              newUser.password = hash;
+              // Save user to DB
+              newUser.save()
+                .then(user => {
+                  req.flash('success_msg', 'Registeration successful!')
+                  res.redirect('/index')
                 })
-                res.send(token)
-            } else {
-                res.json({ error: 'User does not exist' })
-            }
-        } else {
-            res.json({ error: 'User does not exist' })
+                .catch(err => console.log(err));
+            })
+          })
         }
-    })
-    .catch(err => {
-        res.send('error: ' + err)
-    })
-})
+      });
+  }
+});
 
-users.get('/profile', (req, res) => {
-    var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
+// Login handle
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/index',
+    failureRedirect: '/users/login',
+    failureFlash: true
+  })(req, res, next);
+});
 
-    User.findOne({
-        _id: decoded, _id
-    })
-    .then(user => {
-        if(user) {
-            res.json(user)
-        } else {
-            res.send('User does not exist')
-        }
-    })
-    .catch(err => {
-        res.send('error: ' + err)
-    })
-})
+// Logout handle
+router.get('/logout', (req, res) => {
+  req.logout();
+  req.flash('success_msg', 'Logged out!');
+  res.redirect('/index');
+});
 
-module.exports = users
+module.exports = router;

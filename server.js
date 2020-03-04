@@ -1,45 +1,62 @@
-var express = require('express');
-var cors = require('cors');
-var bodyParser = require('body-parser');
-var app = express();
-var path = require('path');
+const express = require('express');
+const expressLayouts = require('express-ejs-layouts')
+const flash = require('connect-flash');
+const session = require('express-session');
 const mongoose = require('mongoose');
+const path = require('path');
+const passport = require('passport');
 
-var PORT = process.env.PORT || 3000;
+const app = express();
 
-const mongoURI = 'mongodb+srv://***REMOVED***:***REMOVED***@webtekniikka-projekti-raull.mongodb.net/test?retryWrites=true&w=majority';
-mongoose.connect(process.env.mongoURI);
+// Passport config
+require('./config/passport')(passport);
 
-app.use(bodyParser.json());
-app.use(cors());
-app.use(
-    bodyParser.urlencoded({
-        extended: false
-    })
-);
+// DB init
+const db = require('./config/keys').MongoURI;
 
-mongoose
-    .connect(
-        mongoURI,
-        { useNewUrlParser: true }
-    )
-    .then(() => console.log('MongoDB connected'))
+// Connect to database
+mongoose.connect(db, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true 
+})
+    .then(() => console.log('MongoDB connection ON'))
     .catch(err => console.log(err));
 
-var Users = require('./routes/Users');
+// EJS
+app.use(expressLayouts);
+app.set('view engine', 'ejs');
 
-app.use('/users', Users);
+// Bodyparser
+app.use(express.urlencoded({ extended: false }));
 
-app.use(express.static(path.join(__dirname, '/views')));
-app.use(express.static(path.join(__dirname, '/scripts')));
+// Express Session init
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
 
-app.get('/', (req, res) => {
-    resp.sendFile('register.html', { root: path.join(__dirname, './views')});
+//Passport middelware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Connect-flash init
+app.use(flash());
+
+// Global variables
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
 })
 
+// Routes
+app.use('/', require('./routes/index'));
+app.use('/about', require('./routes/about'));
+app.use('/users', require('./routes/users'));
 
+app.use(express.static("public"));
+const PORT = process.env.PORT || 3000;
 
-
-app.listen(PORT, function() {
-    console.log('Server is running on port: ' + PORT)
-});
+app.listen(PORT, console.log('Server started on port' + PORT));

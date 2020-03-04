@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="aboutBody">
+    <header>
+        <div class="logo">
+            <IMG SRC="img/logoweb.png" ALT="some text" WIDTH=125>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="#">Search</a></li>
+                <li onclick="loginpop()">Login</li>
+            </ul>
+        </nav>
+    </header>
+    <!--Modal section-->
+    <div class="bg-modal"id="loginpage">
+        <div class="modal-content">
+            <div onclick="closelogin()" class="close">+</div>
+            <img src="img/logoweb.png" class="inputlog" alt="">
+        <form action="">
+        <input class="inputlog" type="text" placeholder="Username">
+        <input class="inputlog" type="text" placeholder="Password">
+        <button>Login</button>
+        <span></span>
+        <p>Not registered yet?</p>
+        <p><a onclick="signuppop()" href="#">Sign up</a></p>
+    </form>
+        </div>
+    </div>
+    <div class="bg-modal" id="signuppage">
+        <div class="modal-content">
+            <div onclick="closelogin()" class="close">+</div>
+            <img src="img/logoweb.png" class="inputlog" alt="">
+            <form action="">
+                <input class="inputlog" type="text" placeholder="Name">
+                <input class="inputlog" type="text" placeholder="Email">
+                <input class="inputlog" type="text" placeholder="Password">
+                <input class="inputlog" type="text" placeholder="Password again">
+                <button>Sign up</button>  
+            </form>
+        </div>
+    </div>
+    <main class="hero">
+        <div class="herotext">
+            <h2>ABOUT US</h2>
+        </div>
+    </main>
+    
+    <section class="infoheader"> 
+        <div class="infoheader"> 
+            <h2>Lorem ipsum </h2>
+        </div>
+    </section>
+    <section class="infop">
+        <div class="infop">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet fermentum arcu. Nam malesuada porta sapien, a tristique nibh porttitor ac. Duis ac sem non turpis finibus luctus et sed sem. Cras maximus sapien vitae quam lobortis consectetur. Integer facilisis lorem turpis, vel posuere arcu congue quis. Suspendisse dolor nunc, pellentesque imperdiet dictum quis, ornare id tortor. Proin placerat, urna tempus vestibulum tincidunt, quam urna bibendum libero, a blandit libero metus eget neque. Nulla placerat ex a quam ullamcorper, malesuada facilisis nunc facilisis. Vivamus eleifend risus id erat sodales, at commodo lacus tempus. Nulla nec nisi metus. Quisque diam libero, scelerisque sed volutpat nec, commodo sit amet neque. Vestibulum accumsan dui orci, quis commodo purus condimentum eget. Sed facilisis ex eu ipsum molestie, eu aliquet metus pharetra.
+
+                Donec cursus blandit dui, eu accumsan tortor fermentum vel. Vivamus scelerisque orci nec purus pretium semper eget sed quam. Integer ultrices vel nulla id gravida. Praesent odio metus, interdum ut diam ut, fermentum ullamcorper purus. Etiam nec metus ullamcorper, viverra sem non, iaculis quam. Nullam mollis lacus eu felis viverra pretium. Integer ut ornare lectus. Praesent pellentesque tellus dui, vitae imperdiet ipsum facilisis vitae. Integer ac lacus quis ex fermentum suscipit. Integer mi magna, dignissim id sem et, posuere scelerisque felis. Quisque tempus arcu tincidunt mi porttitor, vitae scelerisque odio malesuada. Aliquam imperdiet luctus ullamcorper.
+                
+                Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc lobortis fringilla orci, ac finibus eros consectetur non. Proin dapibus sapien bibendum mattis ultricies. Nulla a mattis elit. Donec malesuada, leo quis vestibulum volutpat, nibh justo viverra leo, vitae ultricies dolor purus at ante. Duis nec massa ut massa maximus suscipit. Praesent blandit turpis vel dolor gravida fermentum. In ex ante, ultrices a blandit in, convallis id erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tristique porttitor ipsum hendrerit lacinia. Donec eu euismod elit. Nullam congue, nisl eu consectetur consequat, massa nibh mattis massa, et tincidunt diam mi sed justo. Curabitur pulvinar euismod sem, eu facilisis odio auctor non.
+                
+                Donec mauris nisi, lobortis at fringilla ac, pulvinar vitae ligula. Aliquam in massa non ligula laoreet molestie. Sed accumsan neque a orci sagittis tempor. Curabitur a mi id mauris elementum aliquam et eget mauris. Donec consectetur fringilla ligula et placerat. Nullam pharetra ipsum at libero pretium molestie. Morbi dignissim turpis eget purus tincidunt eleifend. Fusce sed fringilla massa, ac rutrum orci. Quisque pretium tincidunt quam, in finibus erat pellentesque consectetur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam a efficitur neque. Duis ultricies purus nibh, sed rhoncus ante mollis at. Quisque feugiat turpis eu nibh fermentum, id euismod urna pulvinar.
+                
+                Ut porta sem sed dignissim bibendum. Sed sed metus blandit, interdum orci mollis, finibus diam. Suspendisse elementum, nibh sed commodo ultrices, tellus sem accumsan mauris, in porttitor nulla lorem nec arcu. Phasellus nec sapien eu orci suscipit iaculis vitae id velit. Quisque nec lectus eleifend, condimentum augue at, dictum tellus. Vestibulum interdum pellentesque augue.</p>
+        </div>
+    </section>
+    <section class="creators">
+        <div class="box">
+            <div class="card">
+              <div class="imgBx">
+                  <img src="img/vertti.jpg" alt="images">
+              </div>
+              <div class="details">
+                  <h2>Vertti Huovila<br><span>Student</span></h2>
+              </div>
+            </div>
+          
+             <div class="card">
+               <div class="imgBx">
+                  <img src="img/Nico.jpg" alt="images">
+               </div>
+               <div class="details">
+                  <h2>Nico Järvinen<br><span>Student</span></h2>
+                </div>
+             </div>
+      
+             <div class="card">
+               <div class="imgBx">
+                  <img src="img/tatu.jpg" alt="images">
+               </div>
+               <div class="details">
+                  <h2>Tatu Nordström<br><span>Student</span></h2>
+                </div>
+             </div>
+       
+        </div>
+    </section>
+    
+    
+
+    <footer class="footer">
+        <div class="container">
+            <div class="top">
+                <ul class="footer-ul">
+                    <li>Legal</li>
+                    <li>Tos</li>
+                    <li class="footer-p">About us</li>
+                </ul>
+            </div>
+            <div class="bot">
+                <ul class="footer-ul">
+                    <li class="copyright">Copyright©</li>
+                    <div class="nimet">
+                    <li>Vertti Huovila</li>
+                    <li>Nico Järvinen</li>
+                    <li>Tatu Nordström</li>
+                </div>
+                </ul>
+
+            </div>
+            <div class="footer-logo"><IMG SRC="img/logowebvalkonen.png" ALT="some text" WIDTH=75></div>
+        </div>
+    <script src="javascript.js"></script>
+</body>
+</html>

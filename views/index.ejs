@@ -4,37 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    
 </head>
 <body>
+
     <header>
         <div class="logo">
             <IMG SRC="img/logoweb.png" ALT="some text" WIDTH=125>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Discover</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="/index">Home</a></li>
+                <li><a href="about">About</a></li>
                 <li><a href="#">Search</a></li>
-                <li><a onclick="loginpop()">Login</a></li>
+                <li onclick="loginpop()">Login</li>
             </ul>
         </nav>
+        <section class="profile">
+            
+        </section>
     </header>
     <!--Modal section-->
-    <div class="bg-modal">
+    <div class="bg-modal"id="loginpage">
         <div class="modal-content">
             <div onclick="closelogin()" class="close">+</div>
-            <img src="img/logoweb.png" class="inputlog" alt="">
-            <title name="title"></title>
-            <form action="/user/login" method="POST">
-                <input class="inputlog" type="email" name="email" placeholder="Email" required>
-                <input class="inputlog" type="password" name="password" id="password" placeholder="Password" required>
+                <img src="img/logoweb.png" class="inputlog" alt="">
+            <form action="/users/login" method="POST">
+                <input class="inputlog" type="email" name="email" placeholder="Email" required value="<%= typeof email != 'undefined' ? email : '' %>">
+                <input class="inputlog" type="password" name="password" id="password" placeholder="Password" required value="<%= typeof password != 'undefined' ? password : '' %>">
                 <button>Login</button>
+                <span></span>
+                <p>Not registered yet?</p>
+                <p><a onclick="signuppop()" href="#">Sign up</a></p>
             </form>
         </div>
     </div>
+    <div class="bg-modal" id="signuppage">
+        <div class="modal-content">
+            <div onclick="closelogin()" class="close">+</div>
+            <img src="img/logoweb.png" class="inputlog" alt="">
+            <%- include('./partials/messages.ejs'); -%> 
+            <form action="/users/register" method="POST">
+                <input class="inputlog" type="name" name="name" placeholder="Name" required value="<%= typeof name != 'undefined' ? name : '' %>">
+                <input class="inputlog" type="email" name="email" placeholder="Email" required value="<%= typeof email != 'undefined' ? email : '' %>">
+                <input class="inputlog" type="password" name="password" id="password" placeholder="Password" required value="<%= typeof password != 'undefined' ? password : '' %>">
+                <button>Sign up</button>  
+            </form>
+        </div>
+    </div>
+
     <main class="hero">
         <div class="herotext">
             <h2>Otsikko</h2>
@@ -53,13 +70,18 @@
                 <img id="flag1">
                 <img id="flag2">
                 <img id="flag3">
+                <img id="flag4">
+                <img id="flag5">
+                <img id="flag6">
             </div>
+        </div>
             <div class="countryNames">
                 <p id="name1"></p>
                 <p id="name2"></p>
                 <p id="name3"></p>
             </div>
-        </div>
+        <i id="prevBtn"></i>
+        <i id="nextBtn"></i>
     </section>
     <aside class="recents">
         <div class="heading">
@@ -102,14 +124,15 @@
             <div class="bot">
                 <ul class="footer-ul">
                     <li class="copyright">Copyright©</li>
+                    <div class="nimet">
                     <li>Vertti Huovila</li>
                     <li>Nico Järvinen</li>
                     <li>Tatu Nordström</li>
+                </div>
                 </ul>
 
             </div>
             <div class="footer-logo"><IMG SRC="img/logowebvalkonen.png" ALT="some text" WIDTH=75></div>
         </div>
-        <script src="javascript.js"></script>
 </body>
 </html>
