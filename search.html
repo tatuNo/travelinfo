@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
-<body>
-
+<body class="searchbody">
     <header>
         <div class="logo">
             <IMG SRC="img/logoweb.png" ALT="some text" WIDTH=125>
@@ -44,73 +42,36 @@
             <form action="">
                 <input class="inputlog" type="text" placeholder="Name">
                 <input class="inputlog" type="text" placeholder="Email">
-                 <input class="inputlog" type="text" placeholder="Password">
-                 <input class="inputlog" type="text" placeholder="Password again">
-                 <button>Sign up</button>  
+                <input class="inputlog" type="text" placeholder="Password">
+                <input class="inputlog" type="text" placeholder="Password again">
+                <button>Sign up</button>  
             </form>
         </div>
     </div>
-
     <main class="hero">
         <div class="herotext">
-            <h2>Otsikko</h2>
-            <p>Lorem, ipsum dolor.</p>
-        </div>
-        <div class="button">
-            <button>Here</button>
+            <h2>SEARCH</h2>
         </div>
     </main>
-    <section class="populars"> 
-        <div class="otsikko">
-            <h2>Most popular: </h2>
-        </div>
-        <div class="slider">
-            <div class="flags">
-                <img id="flag1">
-                <img id="flag2">
-                <img id="flag3">
-                <img id="flag4">
-                <img id="flag5">
-                <img id="flag6">
-            </div>
-        </div>
-            <div class="countryNames">
-                <p id="name1"></p>
-                <p id="name2"></p>
-                <p id="name3"></p>
-            </div>
-        <i id="prevBtn"></i>
-        <i id="nextBtn"></i>
-    </section>
-    <aside class="recents">
-        <div class="heading">
-            <h2>Recent reviews: </h2>
-        </div>
-        <div class="user-info">
-            <img src="https://picsum.photos/100" alt="">
-            <p class="name">Lorem Ipsum</p>
-            <p class="date">March 1st, 2020</p>
-        </div>
-        <div class="country">
-            <p class="Test">Country, City</p>
-        </div>
-        <div class="comment">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, itaque!</p>
-        </div>
-        <div class="votes">
-            <button>+</button>
-            <button>-</button>
-        </div>
-        <div class="more">
-            <p>See more..</p>
-        </div>
-    </aside>
+    <section id="search-container">
+        <div>
+        <input type="text" id="search" name="search" placeholder="Search for country">
+        <button id="submit">Submit</button>
+        <table id="table">
+            <tr class="trSearch">
+                <td class="tdSearch">Flag</td>
+                <td class="tdSearch">Country</td>
+                <td class="tdSearch">Capital</td>
+                <td class="tdSearch">Currency</td>
+                <td class="tdSearch">Population</td>
+            </tr>
+        </table>
+        <table id="datatable">
     
-    <section class="TBA">
-        <div class="tba">
-            <p>tba</p>
+        </table>
         </div>
     </section>
+
     <footer class="footer">
         <div class="container">
             <div class="top">
@@ -133,7 +94,6 @@
             </div>
             <div class="footer-logo"><IMG SRC="img/logowebvalkonen.png" ALT="some text" WIDTH=75></div>
         </div>
-        <script src="javascript.js"></script>
-    
+    <script src="search.js"></script>
 </body>
 </html>

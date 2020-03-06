@@ -553,3 +553,41 @@ footer{
   margin-top: 5px;
    } 
 
+/** Search Html */
+.searchbody {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 100%));
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header header header"
+    "hero hero hero" 
+    "search-container search-container search-container"
+    "footer footer footer";
+}
+#search-container {
+    grid-area: search-container;
+    display: grid;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    background: white;
+    font-family: sans-serif;
+}
+#search {
+    font-size: 30px;
+    border: 1px solid black;
+}
+#submit {
+    font-size: 30px;
+}
+
+.tdSearch {
+    width:305px;
+    border: solid black 1px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+#datatable img {
+    max-width: 100%;
+}
