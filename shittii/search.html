@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="searchbody">
+    <header>
+        <div class="logo">
+            <IMG SRC="img/logoweb.png" ALT="some text" WIDTH=125>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li onclick="loginpop()">Login</li>
+            </ul>
+        </nav>
+    </header>
+    <!--Modal section-->
+    <div class="bg-modal"id="loginpage">
+        <div class="modal-content">
+            <div onclick="closelogin()" class="close">+</div>
+            <img src="img/logoweb.png" class="inputlog" alt="">
+        <form action="">
+        <input class="inputlog" type="text" placeholder="Username">
+        <input class="inputlog" type="text" placeholder="Password">
+        <button>Login</button>
+        <span></span>
+        <p>Not registered yet?</p>
+        <p><a onclick="signuppop()" href="#">Sign up</a></p>
+    </form>
+        </div>
+    </div>
+    <div class="bg-modal" id="signuppage">
+        <div class="modal-content">
+            <div onclick="closelogin()" class="close">+</div>
+            <img src="img/logoweb.png" class="inputlog" alt="">
+            <form action="">
+                <input class="inputlog" type="text" placeholder="Name">
+                <input class="inputlog" type="text" placeholder="Email">
+                <input class="inputlog" type="text" placeholder="Password">
+                <input class="inputlog" type="text" placeholder="Password again">
+                <button>Sign up</button>  
+            </form>
+        </div>
+    </div>
+    <main class="hero">
+        <div class="herotext">
+            <h2>SEARCH</h2>
+        </div>
+    </main>
+    <section id="search-container">
+        <div>
+        <input type="text" id="search" name="search" placeholder="Search for country">
+        <button id="submit">Submit</button>
+        <table id="table">
+            <tr class="trSearch">
+                <td class="tdSearch">Flag</td>
+                <td class="tdSearch">Country</td>
+                <td class="tdSearch">Capital</td>
+                <td class="tdSearch">Currency</td>
+                <td class="tdSearch">Population</td>
+            </tr>
+        </table>
+        <table id="datatable">
+    
+        </table>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="top">
+                <ul class="footer-ul">
+                    <li>Legal</li>
+                    <li>Tos</li>
+                    <li class="footer-p">About us</li>
+                </ul>
+            </div>
+            <div class="bot">
+                <ul class="footer-ul">
+                    <li class="copyright">Copyright©</li>
+                    <div class="nimet">
+                    <li>Vertti Huovila</li>
+                    <li>Nico Järvinen</li>
+                    <li>Tatu Nordström</li>
+                </div>
+                </ul>
+
+            </div>
+            <div class="footer-logo"><IMG SRC="img/logowebvalkonen.png" ALT="some text" WIDTH=75></div>
+        </div>
+    <script src="search.js"></script>
+</body>
+</html>

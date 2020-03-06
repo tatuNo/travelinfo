@@ -8,6 +8,7 @@ font-family: 'Vollkorn', ;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+    
 }
 
 body {
@@ -20,6 +21,11 @@ body {
     "populars populars populars"
     "recents tba tba"
     "footer footer footer";
+}
+a{
+    text-decoration: none; 
+    decoration: none; 
+    color: white;
 }
 .bg-modal {
     width: 100%;
@@ -66,6 +72,7 @@ header {
     top: 0;
     width: 100%;
     background-color: white;
+    z-index: 500;
 }
 
 .logo {
@@ -92,6 +99,9 @@ nav ul li{
 nav a {
     color: black;
     text-decoration: none;
+}
+.logout{
+    color: grey;
 }
 
 .hero {
@@ -395,6 +405,7 @@ footer{
     display: inline-block;
     font-size: 4vh;
     margin: 2vh 15vh 4vh 15vh;
+    
 }
 .bot{
     grid-area: bot;
@@ -434,6 +445,7 @@ footer{
 .infoheader{
     grid-area: infoheader;
     display: grid;
+<<<<<<< HEAD:public/styles.css
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 5vh auto;
     text-align: center;
@@ -442,13 +454,31 @@ footer{
 
     
 
+=======
+    grid-template-columns: 1fr;
+    grid-template-rows: vh auto;
+    font-size: 2vh;
+    margin: 5vh 15vh 0vh 15vh;
+}
+.aboutHeading{
+    text-align: center;
+    grid-column: 2/3;
+>>>>>>> 1c28f2637dc0aa4b5bb0aee96f2165679f9ab453:styles.css
 }
 .infop {
     grid-area: infop;
     display: grid;
+<<<<<<< HEAD:public/styles.css
     text-align: center;
     font-size: 2vh;
     margin: 0vh 15vh 5vh 15vh;
+=======
+    text-align: left;
+    font-size: 3vh;
+    margin: 0vh 15vh 5vh 15vh;
+    padding: 5px;
+    letter-spacing: 1px;
+>>>>>>> 1c28f2637dc0aa4b5bb0aee96f2165679f9ab453:styles.css
     
 }
 .creators{
@@ -552,4 +582,45 @@ footer{
   display: block;
   margin-top: 5px;
    } 
+<<<<<<< HEAD:public/styles.css
+=======
 
+/** Search Html */
+.searchbody {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 100%));
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header header header"
+    "hero hero hero" 
+    "search-container search-container search-container"
+    "footer footer footer";
+}
+#search-container {
+    grid-area: search-container;
+    display: grid;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    background: white;
+    font-family: sans-serif;
+}
+#search {
+    font-size: 30px;
+    border: 1px solid black;
+}
+#submit {
+    font-size: 30px;
+}
+>>>>>>> 1c28f2637dc0aa4b5bb0aee96f2165679f9ab453:styles.css
+
+.tdSearch {
+    width:305px;
+    border: solid black 1px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+#datatable img {
+    max-width: 100%;
+}
