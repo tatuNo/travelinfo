@@ -433,6 +433,7 @@ footer{
 .bot{
     grid-area: bot;
     text-align: center;
+    margin-bottom: 2vh;
     
 }
 .copyright{
@@ -468,16 +469,6 @@ footer{
 .infoheader{
     grid-area: infoheader;
     display: grid;
-<<<<<<< HEAD:public/styles.css
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 5vh auto;
-    text-align: center;
-    font-size: 2vh;
-    margin: 2vh 15vh 0vh 15vh;
-
-    
-
-=======
     grid-template-columns: 1fr;
     grid-template-rows: vh auto;
     font-size: 2vh;
@@ -486,22 +477,15 @@ footer{
 .aboutHeading{
     text-align: center;
     grid-column: 2/3;
->>>>>>> 1c28f2637dc0aa4b5bb0aee96f2165679f9ab453:styles.css
 }
 .infop {
     grid-area: infop;
     display: grid;
-<<<<<<< HEAD:public/styles.css
-    text-align: center;
-    font-size: 2vh;
-    margin: 0vh 15vh 5vh 15vh;
-=======
     text-align: left;
     font-size: 3vh;
     margin: 0vh 15vh 5vh 15vh;
     padding: 5px;
     letter-spacing: 1px;
->>>>>>> 1c28f2637dc0aa4b5bb0aee96f2165679f9ab453:styles.css
     
 }
 .creators{
@@ -605,8 +589,6 @@ footer{
   display: block;
   margin-top: 5px;
    } 
-<<<<<<< HEAD:public/styles.css
-=======
 
 /** Search Html */
 .searchbody {
@@ -635,7 +617,6 @@ footer{
 #submit {
     font-size: 30px;
 }
->>>>>>> 1c28f2637dc0aa4b5bb0aee96f2165679f9ab453:styles.css
 
 .tdSearch {
     width:305px;
@@ -646,4 +627,14 @@ footer{
 }
 #datatable img {
     max-width: 100%;
+}
+.formi{
+    display:block;
+    margin: 10vh;
+}
+.footer-user{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 10 ;
 }

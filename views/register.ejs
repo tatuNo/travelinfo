@@ -6,8 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <IMG SRC="img/logoweb.png" ALT="some text" WIDTH=125>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="#">Search</a></li>
+                <li onclick="loginpop()">Login</li>
+            </ul>
+        </nav>
+        <section class="profile">
+            
+        </section>
+    </header>
     <%- include('./partials/messages.ejs'); -%> 
-    <form action="/users/register" method="POST">
+    <form class="formi" action="/users/register" method="POST">
         <input type="name" name="name" placeholder="Name" required value="<%= typeof name != 'undefined' ? name : '' %>">
         <input type="email" name="email" placeholder="Email" required value="<%= typeof email != 'undefined' ? email : '' %>">
         <input type="password" name="password" id="password" placeholder="Password" required value="<%= typeof password != 'undefined' ? password : '' %>">
@@ -15,5 +31,28 @@
         <a href="/users/login">LOGIN</a>
         <a href="/users/register">REGISTER</a>
     </form>
+    <footer class="footer-user">
+        <div class="container">
+            <div class="top">
+                <ul class="footer-ul">
+                    <li>Legal</li>
+                    <li>Terms Of Service</li>
+                    <li class="footer-p"><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="bot">
+                <ul class="footer-ul">
+                    <li class="copyright">Copyright©</li>
+                    <div class="nimet">
+                        <li><a href="/about#henkilot">Vertti Huovila</a></li>
+                        <li><a href="/about#henkilot">Nico Järvinen</a></li>
+                        <li><a href="/about#henkilot">Tatu Nordström</a></li>
+                </div>
+                </ul>
+
+            </div>
+            <div class="footer-logo"><IMG SRC="img/logowebvalkonen.png" ALT="some text" WIDTH=75></div>
+        </div>
+    <script src="javascript.js"></script>
 </body>
 </html>
