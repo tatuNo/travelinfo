@@ -110,7 +110,29 @@ nav a {
     background-repeat: no-repeat;
     grid-template-columns: 7vh 1fr 7vh;
     grid-template-rows: 2fr 1fr 1fr 2fr;
-    background-image: url(https://picsum.photos/1920/1080);
+    background-image: url(img/hero2.jpg);
+    background-size: cover;
+    border-bottom: 1.5px solid black;
+    height: 60vh;
+}
+.hero2 {
+    grid-area: hero;
+    display: grid;
+    background-repeat: no-repeat;
+    grid-template-columns: 7vh 1fr 7vh;
+    grid-template-rows: 2fr 1fr 1fr 2fr;
+    background-image: url(img/hero1.jpg);
+    background-size: cover;
+    border-bottom: 1.5px solid black;
+    height: 60vh;
+}
+.hero3 {
+    grid-area: hero;
+    display: grid;
+    background-repeat: no-repeat;
+    grid-template-columns: 7vh 1fr 7vh;
+    grid-template-rows: 2fr 1fr 1fr 2fr;
+    background-image: url(img/hero2.jpg);
     background-size: cover;
     border-bottom: 1.5px solid black;
     height: 60vh;
@@ -126,6 +148,7 @@ nav a {
     text-transform: uppercase;
     text-align: center;
     color: snow;
+    margin-bottom: ;
 }
 
 .herotext p{
@@ -142,8 +165,8 @@ nav a {
 .button button {
     padding: 2vh;
     border: none;
-    background-color: lightblue;
-    color: white;
+    background-color: lightgray;
+    color:white;
 }
 
 .populars {
