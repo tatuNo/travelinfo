@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const passport = require('passport');
 
+
 const app = express();
 
 // Passport config
@@ -50,6 +51,8 @@ app.use((req, res, next) => {
     res.locals.error = req.flash('error');
     next();
 })
+
+
 
 // Routes
 app.use('/', require('./routes/index'));
