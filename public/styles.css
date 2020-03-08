@@ -692,8 +692,8 @@ hr {
 
 /** Login page */
 .loginform {
-    padding: 50px;
-    margin: 159px;
+    padding: 0px;
+    margin: 150px;
 }
 .container.login{
     display: grid;
