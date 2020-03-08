@@ -688,7 +688,7 @@ hr {
 }
 
 /* Add a blue text color to links */
-a {
+.signIn {
   color: dodgerblue;
 }
 
